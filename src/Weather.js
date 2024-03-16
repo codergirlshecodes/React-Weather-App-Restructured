@@ -12,7 +12,7 @@ export default function Weather(props) {
     function handleResponse(response) {
         console.log(response.data);
         setWeatherData({
-            coordinates: response.data.coordinates,
+            coordinates: response.data.coord,
             temperature: response.data.main.temp,
             humidity: response.data.main.humidity,
             date: new Date(response.data.dt * 1000),
@@ -35,7 +35,6 @@ export default function Weather(props) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        
         setCity(event.target.elements.city.value);
     }
 
@@ -49,7 +48,7 @@ export default function Weather(props) {
                             placeholder="Enter a city.."
                             className="form-control"
                             autoFocus="on"
-                            name="city" 
+                            name="city"
                         />
                     </div>
                     <div className="col-md-3">
@@ -62,7 +61,7 @@ export default function Weather(props) {
                 </div>
             </form>
             {ready ? <WeatherInfo data={weatherData} /> : "Loading..."}
-            <WeatherForecast coordinates={props.coordinates}/>
+            {ready && <WeatherForecast coordinates={weatherData.coordinates} />}
         </div>
     );
 }
