@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <div className="container">
       <Weather defaultCity="London" />
-      <footer class="text-center">
+      <footer className="text-center">
         This project was coded by Alexa Cacchiola and is {" "}
       <a href="https://github.com/codergirlshecodes/react-weather-app-restructured" 
       target="_blank" 
