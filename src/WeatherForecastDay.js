@@ -7,7 +7,7 @@ export default function WeatherForecast(props) {
   const [forecast, setForecast] = useState(null);
 
   useEffect(() => {
-    let apiKey = "4cdc26195e7518c853759f0cd6c04c9a";
+    let apiKey = "15b6ba0523386a8a73b38b2440a74dea";
     let lon = props.coordinates?.lon;
     let lat = props.coordinates?.lat;
 

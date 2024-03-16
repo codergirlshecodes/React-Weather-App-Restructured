@@ -25,7 +25,7 @@ export default function Weather(props) {
     }
 
     useEffect(() => {
-        const apiKey = "6f578b96aa9505bcce148ac22cb85794";
+        const apiKey = "15b6ba0523386a8a73b38b2440a74dea";
         let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
         axios.get(apiUrl)
@@ -61,7 +61,8 @@ export default function Weather(props) {
                 </div>
             </form>
             {ready ? <WeatherInfo data={weatherData} /> : "Loading..."}
-            {ready && <WeatherForecast coordinates={weatherData.coordinates} />}
+            {ready && weatherData.coordinates ? <WeatherForecast coordinates={weatherData.coordinates} /> : null}
         </div>
     );
-}
+    }  
+
