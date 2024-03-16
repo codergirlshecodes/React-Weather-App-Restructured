@@ -61,7 +61,7 @@ export default function Weather(props) {
                 </div>
             </form>
             {ready ? <WeatherInfo data={weatherData} /> : "Loading..."}
-            {ready && weatherData.coordinates ? <WeatherForecast coordinates={weatherData.coordinates} /> : null}
+            {ready && weatherData.coordinates ? <WeatherForecast /> : null}
         </div>
     );
     }  
